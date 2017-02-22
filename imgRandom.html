@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex"/>
+  <title>My Web Images</title>
+  <style type="text/css">
+        #images {
+                border: solid;
+                border-radius: 1px;
+                height: 320px;
+                width: 320px;
+        }
+        #button {
+             height: 50px;
+             width: 120px;
+        }
+        img {
+             min-width: 100%;
+             min-height: 100%;
+             max-height: 100%;
+             max-width: 100%;
+        }
+  </style>
+</head>
+<body>
+
+  <div id="images">
+  </div>
+  <br/>
+  <span id="button">
+        <a href="javascript:getImage()"> Get Image! </a>
+        <!--<input id="randImg" type="button" value=" Button"/>-->
+ </span>
+
+  <footer>
+    <p class=sectionSign>
+    <p>&copy; 2017 </p>
+  </footer>
+  <script type="text/javascript" charset="utf-8">
+        var urls = [
+             'http://i.dailymail.co.uk/i/pix/2014/12/19/2429618600000578-0-image-a-290_1419003100892.jpg',
+             'https://s-media-cache-ak0.pinimg.com/736x/7f/f7/b9/7ff7b921190bc4c05a1f3c11ff2ce086.jpg',
+             'https://s-media-cache-ak0.pinimg.com/736x/2b/d0/bc/2bd0bc7b9feb7283e12c1a8538067ce6.jpg',
+             'http://imagenesgraciosasdeanimales.com/wp-content/uploads/2015/10/fotos-graciosas-con-frases-divertidas-de-amor-299x400.jpg'
+        ];
+        function getImage() {
+                var imgs = document.getElementById("images");
+                imgs.innerHTML = '<img src="'+urls[Math.floor(Math.random() * urls.length)]+'"/>';
+        };
+        getImage();
+  </script>
+</body>
+</html>
